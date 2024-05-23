@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { routeNames } from '../../app.routes';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 
@@ -12,6 +13,8 @@ export class WelcomeComponent implements OnInit {
   user: User;
 
   constructor(private userService: UserService) { }
+
+  get backRoute(): string[] { return ['/' + routeNames.login]; }
 
   ngOnInit() {
     this.getUser();

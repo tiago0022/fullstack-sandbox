@@ -1,1 +1,8 @@
-<span *ngIf="user">Welcome {{user.name}}!</span>
+<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1rem">
+
+    <mat-spinner *ngIf="!user" diameter="16"></mat-spinner>
+    <span *ngIf="user">Welcome {{user.name}}!</span>
+
+    <button mat-raised-button [routerLink]="backRoute">Back</button>
+
+</div>
