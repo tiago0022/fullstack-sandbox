@@ -10,6 +10,8 @@ export class User {
     email: string;
     name: string;
 
-    constructor() { }
+    constructor(userInterface?: IUser | Object) {
+        Object.assign(this, userInterface);
+    }
 
 }

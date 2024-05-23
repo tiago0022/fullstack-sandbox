@@ -4,19 +4,19 @@ import com.tiago.backend.model.dto.UserDto;
 import com.tiago.backend.model.entity.User;
 import com.tiago.backend.model.mapping.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
 @RestController
+@RequestMapping("/user")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/user")
+    @GetMapping
     public UserDto getUser(@RequestParam(name = "email") String email) {
 
         System.out.println("Param received on getUser: " + email);

@@ -1,5 +1,7 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { appHttpConfig } from '../app.config';
 import { User } from '../models/user';
 
 @Injectable({
@@ -7,10 +9,14 @@ import { User } from '../models/user';
 })
 export class UserService {
 
-  constructor() { }
+  private servicePath = appHttpConfig.url + '/user'
 
-  getUser(): Observable<User> {
-    throw new Error('Method not implemented.');
+  constructor(private http: HttpClient) { }
+
+  getUser(email: string): Observable<User> {
+    const params = new HttpParams().append('email', email);
+    return this.http.get(this.servicePath, { headers: appHttpConfig.headers, params })
+      .pipe(map(user => new User(user)));
   }
 
 }

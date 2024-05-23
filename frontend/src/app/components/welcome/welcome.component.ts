@@ -14,11 +14,11 @@ export class WelcomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    // this.getUser();
+    this.getUser();
   }
 
   private getUser() {
-    this.userService.getUser().subscribe((user: User) => {
+    this.userService.getUser('john.doe@email.test').subscribe((user: User) => {
       this.user = user;
     });
   }

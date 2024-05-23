@@ -22,7 +22,6 @@ import { PgInitComponent } from './pg-init.component';
     MatToolbarModule,
     FlexModule,
     MatButtonModule,
-    HttpClientModule,
   ]
 })
 export class PgInitModule { }
