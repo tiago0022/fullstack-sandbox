@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,6 +22,7 @@ import { PgInitComponent } from './pg-init.component';
     MatToolbarModule,
     FlexModule,
     MatButtonModule,
+    HttpClientModule,
   ]
 })
 export class PgInitModule { }
