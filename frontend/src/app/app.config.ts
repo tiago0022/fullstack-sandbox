@@ -14,5 +14,8 @@ export const appHttpConfig = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
-  })
+  }),
+  paramName: {
+    email: 'email',
+  }
 }

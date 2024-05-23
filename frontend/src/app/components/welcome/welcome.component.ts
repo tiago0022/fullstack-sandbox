@@ -18,7 +18,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   private getUser() {
-    this.userService.getUser('john.doe@email.test').subscribe((user: User) => {
+    this.userService.getUser('root').subscribe((user: User) => {
       this.user = user;
     });
   }

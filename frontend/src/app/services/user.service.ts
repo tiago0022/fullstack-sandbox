@@ -14,7 +14,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUser(email: string): Observable<User> {
-    const params = new HttpParams().append('email', email);
+    const params = new HttpParams().append(appHttpConfig.paramName.email, email);
     return this.http.get(this.servicePath, { headers: appHttpConfig.headers, params })
       .pipe(map(user => new User(user)));
   }
