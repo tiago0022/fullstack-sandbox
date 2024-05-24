@@ -1,6 +1,8 @@
 # Full stack web sandbox
 
-Empty setup for starting up simple web applications
+Empty setup for starting up simple web applications.
+
+Added some code examples doing a simple query by the user email.
 
 _TODO: use Docker_
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { localStorageConfig } from '../../app.config';
 import { routeNames } from '../../app.routes';
-import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  user: User;
+  userName: string | null;
 
   constructor(private userService: UserService) { }
 
@@ -21,9 +21,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   private getUser() {
-    this.userService.getUser('root').subscribe((user: User) => {
-      this.user = user;
-    });
+    this.userName = localStorage.getItem(localStorageConfig.user.name);
   }
 
 }

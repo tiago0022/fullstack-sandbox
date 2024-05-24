@@ -19,3 +19,9 @@ export const appHttpConfig = {
     email: 'email',
   }
 }
+
+export const localStorageConfig = {
+  user: {
+    name: 'user_name'
+  }
+}
