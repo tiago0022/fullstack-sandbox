@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class PgInitComponent {
   title = 'Fullstack sandbox';
-  version = 'Displaying the name of the user that is on the DB';
+  version = 'Displaying the name of the user that is on the DB by the provided email (not exactly a login)';
 }

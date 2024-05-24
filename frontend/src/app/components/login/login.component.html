@@ -1,1 +1,18 @@
-<button mat-raised-button color="primary" [routerLink]="welcomeRoute">Login</button>
+<form fxFill fxLayout="column" fxLayoutGap="1rem" [formGroup]="form">
+
+    <div fxLayout="row">
+        <mat-form-field fxFlex="30">
+            <mat-label>Email</mat-label>
+            <input matInput label="Email" [formControl]="email">
+            <mat-error *ngIf="email.invalid">Invalid</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+        <button [disabled]="!enableLogin" mat-raised-button color="primary" (click)="login()">Login</button>
+        <mat-spinner *ngIf="loading" diameter="16"></mat-spinner>
+    </div>
+
+    <span *ngIf="httpError" class="mat-text-warn">Unable to fetch user</span>
+
+</form>
